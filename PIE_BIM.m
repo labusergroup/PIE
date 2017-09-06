@@ -9,6 +9,14 @@
 function [w, mu, t, a, ProbAmp, Pop] = PIE_BIM()
 
 %% Define parameters
+
+% w - pulse frequency omega
+% mu - transition dipole moment
+% t - time vector
+% a - states' amplitudes vector for all times
+% ProbAmp - states' amplitudes
+% Pop - states' populations
+
 % tic
 global hbar hbar_ev auDipole w mu EX EIR omegaX omegaIR tIR tX Power Basis NStates
 
@@ -34,7 +42,7 @@ omegaIR = 0.05843*Hartree/hbar_ev; %radian/ps, 3e8/(omegaIR/2/pi*1e12) [m]
 tIR = 5e-3/2*pi/acos((.5)^0.25); %ps, cutoff time for cos^2 waveform
 tX = tIR/7^.5;
 
-% Choose between adiabatic and diabatic bases. 
+% Choose between SO adiabatic and diabatic bases. 
 % Basis = 'a';
 Basis = 'd';
 
